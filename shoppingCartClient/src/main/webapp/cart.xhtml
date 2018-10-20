@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="resources/css/shop.css"></link>
+        <h:outputScript name="jquery/jquery.js" library="primefaces"/>
+        <title>#{msgs['app.title']}</title>
+    </h:head>
+    <h:body>
+        <h:form class='header'>
+            <p:growl sticky="false" autoUpdate="true"/>
+            <p:commandButton action="#{shoppingCartController.navigateToProducts()}"
+                             styleClass='icon-button header-cart-button' icon="fa fa-list-alt" title="#{msgs['product.navigate.tip']}"/>
+        </h:form>
+        <h:form id="content" styleClass="form">
+
+            <div class="title">
+                <h:outputText value="#{msgs['cart.title']}: " />
+                <h:outputText value="#{shoppingCartController.cart.amount}" >
+                    <f:convertNumber type="currency" locale="pt-BR"/>
+                </h:outputText>
+            </div>
+
+            <p:dataTable id="cart" value="#{shoppingCartController.cart.items}" var="item" styleClass="cart">
+                <p:column width="20">
+                    <p:commandLink action="#{shoppingCartController.removeItem(item)}" update=":content" title="#{msgs['cart.remove.tip']}">
+                        <span class="fa fa-trash"/>
+                    </p:commandLink>
+                </p:column>
+                <p:column headerText="#{msgs['cart.product']}">
+                    <h:outputText value="#{productController.retrieveProductName(item.productId)}"/>
+                </p:column>
+                <p:column headerText="#{msgs['cart.quantity']}" width="100">
+                    <h:outputText value="#{item.quantity}"/>
+                </p:column>
+                <p:column headerText="#{msgs['cart.amount']}" width="100">
+                    <h:outputText value="#{item.amount}">
+                        <f:convertNumber type="currency" locale="pt-BR"/>
+                    </h:outputText>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+
+    </h:body>
+</f:view>
+
+</html>

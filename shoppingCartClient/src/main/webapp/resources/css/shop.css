@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 75px auto;
+    height: 100vh;
+    background-color: #FEFEFE;
+    font-size: 14px;
+}
+
+i {
+    font-size: 1.50em;
+}
+
+input[type=text] {
+    font-size: 1.15em;
+}
+
+button {
+    box-shadow: 1px 1px 3px #333;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+button:active {
+    box-shadow: inset 0 0 5px #000;
+}
+
+button:active i {
+    font-size: 1.40em;
+}
+
+button.primary {
+    color: #FFF;
+    background: #283593;
+}
+
+button:hover.primary, button:active.primary {
+    color: #283593;
+    background: #9fa8da;
+}
+
+.btn {
+    width: auto;
+    padding: 10px 15px;
+    font-size: 1.15em;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.icon-button {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    font-size: 1.50em;
+}
+
+.icon-button .ui-icon {
+    position: relative;
+    top: 25px;
+    left: 20px;
+
+    height: 32px;
+    width: 32px;
+}
+
+.header {
+    background-color: #8c9eff;
+    box-shadow: 1px 1px 3px #333;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    padding-right: 30px;
+}
+
+.header-cart-button {
+    grid-row: 1/1;
+    grid-column: 6/-1;
+    justify-self: end;
+}
+
+.header-cart-counter {
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    background-color: #b71c1c;
+    z-index: 1;
+    position: relative;
+    top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-cart-counter span {
+    position: relative;
+    top: 1px;
+    color: #FEFEFE;
+    font-weight: bold;
+}
+
+.container {
+    width: 65%;
+    padding: 25px;
+    align-self: start;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5em;
+    grid-row-gap: 3em;
+}
+
+.card {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1em;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 1px 1px 3px #333;
+}
+
+.img {
+    height: 200px;
+}
+
+.label {
+    font-size: 1.25em;
+}
+
+.quantity {
+    padding: 5px;
+    width: 40px;
+    border: none;
+    box-shadow: inset 0 0 2px #000;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px auto;
+    grid-row-gap: 50px;
+    align-items: center;
+    justify-items: center;
+}
+
+.title {
+    font-size: 3em;
+    font-weight: bold;
+    align-self: end;
+    font-family: "Courier New", Courier, monospace
+}
+
+.cart {
+    width: 80%;
+    align-self: start;
+    justify-self: center;
+}
+
+.cart td {
+    text-align: center;
+}
